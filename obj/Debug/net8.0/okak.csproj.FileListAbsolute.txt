@@ -12,3 +12,4 @@ C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\refint\okak.dll
 C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.pdb
 C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.genruntimeconfig.cache
 C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\ref\okak.dll
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.sourcelink.json

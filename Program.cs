@@ -34,4 +34,6 @@ if (obj is not int)
 {
     Console.WriteLine("obj is not an int");
 }
-int h = 8;
+int? h = null;
+int j = h.Value;
+// "Value" is used to get the value of a nullable type, it throws an exception if the variable is null.
