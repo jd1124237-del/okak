@@ -1,0 +1,14 @@
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.AssemblyInfoInputs.cache
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.AssemblyInfo.cs
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.csproj.CoreCompileInputs.cache
+C:\Users\Joseph\source\repos\okak\okak\bin\Debug\net8.0\okak.exe
+C:\Users\Joseph\source\repos\okak\okak\bin\Debug\net8.0\okak.deps.json
+C:\Users\Joseph\source\repos\okak\okak\bin\Debug\net8.0\okak.runtimeconfig.json
+C:\Users\Joseph\source\repos\okak\okak\bin\Debug\net8.0\okak.dll
+C:\Users\Joseph\source\repos\okak\okak\bin\Debug\net8.0\okak.pdb
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.dll
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\refint\okak.dll
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.pdb
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\okak.genruntimeconfig.cache
+C:\Users\Joseph\source\repos\okak\okak\obj\Debug\net8.0\ref\okak.dll
