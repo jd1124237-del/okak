@@ -191,6 +191,7 @@ Console.WriteLine(matrix[1, 2]);
 ".IsInterned()" - This is used to check if a specified string is interned, it is used to determine if a string instance is stored in the intern pool.
 ".Concat()" - This is used to concatenate two or more strings, it is used to combine multiple strings into one.
 ".Compare()" - This is used to compare two strings, it is used to determine the relative order of two strings.
+".Empty" - This is used to get an empty string, it is used to represent a string with no characters.
 */
 
 
@@ -227,8 +228,31 @@ while (i > 0)
 "while" is used to create a loop that continues as long as a specified condition is true, it is used to repeat a block of code multiple times.
 */
 
-// waiting for part 14.
 
 
+
+/*
+do
+{
+    Console.WriteLine("Enter a number greater than 10:");
+    int num = int.Parse(Console.ReadLine());
+} while (num <= 10);
+"do-while" is used to create a loop that executes a block of code at least once and continues as long as a specified condition is true, it is used to repeat a block of code multiple times.
+*/
+
+
+
+/*
+for (int i = 1; i <= 5; i++)
+{
+    if (i == 3)
+    {
+        continue;
+    }
+    Console.WriteLine(i);
+}
+ "for" is used to create a loop that iterates over a specified range of values, it is used to repeat a block of code multiple times.
+ "continue" is used to skip the current iteration of a loop and move to the next iteration, it is used to control the flow of a loop.
+*/
 
 
