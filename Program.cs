@@ -243,16 +243,156 @@ do
 
 
 /*
-for (int i = 1; i <= 5; i++)
+for (int i = 0; i <= 20; i++)
 {
-    if (i == 3)
+    if (i%2 == 0)
     {
         continue;
     }
     Console.WriteLine(i);
 }
- "for" is used to create a loop that iterates over a specified range of values, it is used to repeat a block of code multiple times.
+"for" is used to create a loop that iterates over a specified range of values, it is used to repeat a block of code multiple times.
  "continue" is used to skip the current iteration of a loop and move to the next iteration, it is used to control the flow of a loop.
 */
 
-// waiting for part 15
+
+
+/*
+int[] n = new int[3];
+n[0] = 1;
+n[1] = 20;
+n[2] = 300;
+
+foreach (int number in n)
+{
+    Console.WriteLine(number);
+}
+"foreach" is used to iterate over a collection of items, it is used to repeat a block of code for each item in the collection.
+*/
+
+
+
+/*
+for (int i = 1; i <= 10; i++)
+{
+    if (i == 5)
+    {
+        break;
+    }
+    Console.WriteLine(i);
+}
+"break" is used to exit a loop or switch statement, it is used to control the flow of a program.
+*/
+
+
+
+/*
+class MyClass
+{
+    public static void Main()
+    {
+        MyClass.Mn(90);
+
+        MyClass ok = new MyClass();
+        int ggg = ok.Add(50, 10);
+        Console.WriteLine(ggg);
+
+    }
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+
+    public static void Mn(int t)
+    {
+        for (int i = 1; i <= 400; i++)
+        {
+            if (i == t)
+            {
+                break;
+            }
+            Console.WriteLine(i);
+        }
+    }
+}
+
+
+//"public" is an access modifier, it is used to specify the accessibility of a class, method, or variable. It allows access from any other code in the same assembly or another assembly that references it.
+//"static" is a keyword used to declare a member that belongs to the type itself rather than to a specific object. It allows access without creating an instance of the class.
+//"void" is a return type that indicates a method does not return a value. It is used for methods that perform actions but do not produce a result.
+
+*/
+
+
+
+/*
+class Program
+{
+    public static void Main()
+    {
+        int i = 0;
+        Okak(i);
+        Console.WriteLine(i);
+
+
+        int r = 0;
+        Otak(ref r);
+        Console.WriteLine(r);
+
+
+        int total = 0;
+        int product = 0;
+        Calculate(100, 68, out total, out product);
+        Console.WriteLine("Sum = {0} && Product = {1}", total, product);
+
+        int[] Numbers = new int[5];
+        Numbers[0] = 1;
+        Numbers[1] = 2;
+        Numbers[2] = 3;
+        Numbers[3] = 4;
+        Numbers[4] = 5;
+        ParamsMethod(Numbers);
+        ParamsMethod(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+    }
+    public static void Okak(int z)
+    {
+        z = 508;
+    }
+
+
+    public static void Otak(ref int y)
+    {
+        y = 508;
+    }
+
+
+    public static void Calculate(int q, int u, out int sum, out int product)
+    {
+        sum = q + u;
+        product = q * u;
+    }
+    public static void ParamsMethod(params int[] Numbers)// has to be the last parameter :)
+    {
+        Console.WriteLine("There are {0} elements", Numbers.Length);
+        foreach (int b in Numbers)
+        {
+            Console.WriteLine(b);
+        }
+    }
+}
+//"ref" is used to pass a variable by reference, it allows a method to modify the value of the variable outside of its scope.
+//"out" is used to pass a variable by reference, it allows a method to return multiple values.
+//"params" is used to specify a variable number of arguments, it allows a method to accept a variable number of parameters as an array.
+*/
+
+
+
+
+
+
+
+
+
+
+// waiting for part 18
