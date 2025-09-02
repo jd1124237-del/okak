@@ -486,12 +486,43 @@ Console.WriteLine(d);
 
 
 
+/*
+using System;
+using System.Collections.Generic;
 
+class Program
+{
+    static void Main()
+    {
+        // outer list
+        List<List<int>> rolls = new List<List<int>>();
 
+        for (int i = 0; i < 5; i++) // 5 rolls
+        {
+            List<int> currentRoll = new List<int>(); // new "set of variables"
 
+            for (int j = 0; j < 3; j++) // 3 variables per roll
+            {
+                currentRoll.Add((i + 1) * (j + 1));
+            }
 
+            rolls.Add(currentRoll);
+        }
 
-
+        // print everything
+        for (int i = 0; i < rolls.Count; i++)
+        {
+            Console.WriteLine($"Roll {i + 1}:");
+            for (int j = 0; j < rolls[i].Count; j++)
+            {
+                Console.WriteLine($"  rolls[{i}][{j}] = {rolls[i][j]}");
+            }
+        }
+    }
+}
+// This code creates a list of lists to represent multiple rolls, each containing several variables, and prints them out in a structured format.
+// This code is example for understanding nested collections and loops in C#.
+*/
 
 
 
