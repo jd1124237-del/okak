@@ -134,28 +134,6 @@ else
 
 
 /*
-int[] okak = new int[3];
-okak[0] = 1;
-okak[1] = 2;
-okak[2] = 3;
-// "[]" is used to indicate that a variable is an array, it is used to store multiple values in a single variable.
-Console.WriteLine(okak[1]);
-
-int[,] matrix = new int[2, 3];
-matrix[0, 0] = 1;
-matrix[0, 1] = 2;
-matrix[0, 2] = 3;
-matrix[1, 0] = 4;
-matrix[1, 1] = 5;
-matrix[1, 2] = 6;
-Console.WriteLine(matrix[1, 2]);
-// ", " is used to separate multiple values in an array, it is also used to separate multiple parameters in a method.
-// " , " is also used to indicate that a variable is a multi-dimensional array, it is used to store data in a table format.
-*/
-
-
-
-/*
 // "///" - This is used to create XML documentation comments, it is used to document code and generate documentation files.
 // "//" - This is used to create single line comments, it is used to document code and make it more readable.
 // "&&" - This is used to create logical AND operations, it is used to combine multiple conditions in an if statement.
@@ -440,12 +418,12 @@ foreach (int number in numbers)
 
 /*
 Random rnd = new Random();
-int randomNumber;
-for (int i = 1; i <= 10000000000; i++)
+long randomNumber;
+for (long i = 1; i <= 10000000000; i++)
 {
-    for (int j = 1; j <= 10000000000; j++)
+    for (long j = 1; j <= 10000000000; j++)
     {
-        randomNumber = rnd.Next(1, 1000000000000000000000001);
+        randomNumber = rnd.Next(1, 10000000001);
         Console.Write($"{i * j * randomNumber * randomNumber}\t");
     }
     Console.WriteLine(); // Move to the next line after each row
@@ -526,10 +504,269 @@ class Program
 
 
 
+/*
+int[] okak = new int[3];
+okak[0] = 1;
+okak[1] = 2;
+okak[2] = 3;
+// "[]" is used to indicate that a variable is an array, it is used to store multiple values in a single variable.
+Console.WriteLine(okak[1]);
+
+int[,] matrix = new int[2, 3];
+matrix[0, 0] = 1;
+matrix[0, 1] = 2;
+matrix[0, 2] = 3;
+matrix[1, 0] = 4;
+matrix[1, 1] = 5;
+matrix[1, 2] = 6;
+Console.WriteLine(matrix[1, 2]);
+// ", " is used to separate multiple values in an array, it is also used to separate multiple parameters in a method.
+// " , " is also used to indicate that a variable is a multi-dimensional array, it is used to store data in a table format.
+*/
+/*
+// Declaring and initializing an array
+int[] numbers = { 1, 2, 3, 4, 5 };
+
+// Accessing array elements
+Console.WriteLine(numbers[0]);  // Outputs: 1
+
+// Multidimensional array
+int[,] matrix = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+Console.WriteLine(matrix[1, 1]);  // Outputs: 4
+
+// Jagged array
+int[][] jaggedArray = new int[3][];
+jaggedArray[0] = new int[] { 1, 2, 3 };
+jaggedArray[1] = new int[] { 4, 5 };
+jaggedArray[2] = new int[] { 6, 7, 8, 9 };
+Console.WriteLine(jaggedArray[2][3]);  // Outputs: 9
+// "array" is a data structure that stores a fixed-size sequential collection of elements of the same type, it allows access to elements using an index.
+int[][] jaggedArray2 = [new int[] { 1, 2, 3 }, new int[] { 4, 5 }, new int[] { 6, 7, 8, 9 }];
+Console.WriteLine(jaggedArray2[2][3]);
+*/
+
+// Creating and using a List
+List<string> fruits = new List<string>();
+fruits.Add("Apple");
+fruits.Add("Banana");
+fruits.Add("Cherry");
+
+// Accessing list elements
+Console.WriteLine(fruits[1]);  // Outputs: Banana
+
+// Removing an element
+fruits.Remove("Banana");
+
+// Checking if an element exists
+bool hasApple = fruits.Contains("Apple");  // true
+
+
+
+// LINQ query syntax
+int[] numberoes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+var evenNumbers = from num in numberoes
+                  where num % 2 == 0
+                  select num;
+var evenNumbersList = evenNumbers.ToList(); // converts the result to a List<int>
+// or:
+//foreach (var number in evenNumbers)
+//{
+//    Console.WriteLine(number);
+//}
+
+// "LINQ" (Language Integrated Query) is a set of methods and query syntax in C# that allows querying and manipulating data from various data sources like arrays, collections, databases, etc.
+
+
+// LINQ method syntax
+var oddNumbers = numberoes.Where(num => num % 2 != 0); // filters odd numbers from the array
+Console.WriteLine(string.Join(", ", oddNumbers));
+// "Where" is a LINQ method that filters a sequence of values based on a predicate, it returns a new collection containing only the elements that satisfy the specified condition.
+
+// Sorting
+var sortedFruits = fruits.OrderBy(f => f); // sorts fruits in ascending order
+Console.WriteLine(string.Join(", ", sortedFruits));
+// "OrderBy" is a LINQ method that sorts the elements of a sequence in ascending order based on a specified key.
+
+// Grouping
+var numberGroups = numberoes.GroupBy(n => n % 2); // groups numbers by even and odd
+Console.WriteLine(string.Join(", ", numberGroups.Select(g => $"Key: {g.Key}, Count: {g.Count()}")));
+// GroupBy: (LINQ method that groups the elements of a sequence according to a specified key, it returns a collection of groups.)
+/// so is "GroupBy" works like it checking every item in list, puting them in a same function, and creating groups depending on the output of the function,
+/// and if two items got the same result, they will be in the same group. and the name of each group directly linking on that output.
+/// but does it meant that if i make function in which every imput will have different output, so does that mean that all they will be in a different group? 
+/// and of course those groups are not sorted, and just exist inside that variable?
+
+// "string.Join" is a method that concatenates the elements of a collection into a single string, it is used to create a string representation of a collection.
+// "Select" is a LINQ method that projects each element of a sequence into a new form, it is used to transform the elements of a collection.
+// "Count" is a LINQ method that returns the number of elements in a sequence, it is used to determine the size of a collection.
+// "=> " is the lambda operator that separates the parameters from the expression body in a lambda expression.
+// "lambda expression" is a shorthand syntax for defining anonymous functions, it is used in LINQ methods to specify conditions and transformations.
+
+// Aggregation
+int sumOfNumbers = numberoes.Sum(); // calculates the sum of all numbers
+Console.WriteLine(string.Join(", ", numberoes));
+
+
+
+/// LINQ Methods Overview
+
+
+
+// "Where" is just like "if" statement, it checks every item in the list, and if the condition is true, it will return that item.
+// var blueToys = toys.Where(toy => toy.Color == "Blue");
+
+// "Select" is just like "map" function in other programming languages, it transforms every item in the list, and returns a new list with the transformed items.
+// var personNames = people.Select(person => person.Name);
+
+// "OrderBy" is just like "sort" function in other programming languages, it sorts the items in the list, and returns a new list with the sorted items.
+// "OrderByDescending" is just Opposite of "OrderBy".
+// var sortedNumbers = numbers.OrderBy(num => num);
+
+// "FirstOrDefault" is just looking for the first item in the list that satisfies the condition, and returns that item, if no item satisfies the condition, it will return the default value of the type.
+// "SingleOrDefault" is just like "FirstOrDefault", but it wants only one item to satisfy the condition, otherwise it will throw an exception.
+// var firstBlueToy = toys.FirstOrDefault(toy => toy.Color == "Blue");
+
+// "Any" is just like "some" function in other programming languages, it checks if any item in the list satisfies the condition, and returns true or false.
+// bool hasBlueToys = toys.Any(toy => toy.Color == "Blue"); // True or False
+
+// "All" is just like "every" function in other programming languages, it checks if all items in the list satisfy the condition, and returns true or false.
+// bool areAllPositive = numbers.All(n => n > 0);
+
+// "Distinct" is just like "unique" function in other programming languages, it removes duplicate items from the list, and returns a new list with only unique items.
+// var uniqueColors = crayonColors.Distinct();
+
+// "Skip" is just like "slice" function in other programming languages, it skips a specified number of items from the beginning of the list, and returns a new list with the remaining items.
+// "Take" is just like "slice" function in other programming languages, it takes a specified number of items from the beginning of the list, and returns a new list with those items.
+// var firstThreeToys = toys.Take(3);
+// var toysThreeToFive = toys.Skip(2).Take(3);
+
+// "TakeWhile" is just like "Take", but it takes items until the condition is false.
+// var lessThanTen = sortedNumbers.TakeWhile(n => n < 10);
+// "SkipWhile" is just like "Skip", but it skips items until the condition is false.
+// var fromTenOn = sortedNumbers.SkipWhile(n => n < 10);
+
+// "Contain" is just like "includes" function in other programming languages, it checks if the list contains a specified item, and returns true or false.
+// bool hasJohn = names.Contains("John");
+
+// "Reverse" reverses the order of items in the list, and returns a new list with the reversed items.
+// var reversedNumbers = numbers.Reverse();
+
+// "Concat" concatenates two lists, and returns a new list with the combined items.
+// var allToys = toys.Concat(moreToys);
+
+// "Join" is just like "join" function in other programming languages, it joins two lists based on a common key, and returns a new list with the combined items.
+// var toyOwners = toys.Join(people, toy => toy.OwnerId, person => person.Id, (toy, person) => new { ToyName = toy.Name, OwnerName = person.Name });
+
+// "Union" combines two lists and removes duplicates, and returns a new list with the unique items.
+// var allColors = crayonColors.Union(moreCrayonColors);
+
+// "Intersect" returns the common items between two lists, and returns a new list with those items.
+// var commonToys = myToys.Intersect(friendsToys);
+
+// "Except" is just like "difference" function in other programming languages, it returns the items that are in the first list but not in the second list, and returns a new list with those items.
+// var myUniqueNumbers = myNumbers.Except(friendsNumbers);
+
+// "SelectMany" is just like "flatMap" function in other programming languages, it transforms each item in the list to a collection, and flattens the collections into a single list.
+//List<List<int>> listOfLists = new List<List<int>> {
+//new List<int> { 1, 2 },
+//    new List<int> { 3, 4, 5 }
+//};
+//var flattenedList = listOfLists.SelectMany(list => list);
+// Result: 1, 2, 3, 4, 5
+
+// "ThenBy" sorts the items in the list by a secondary key, and returns a new list with the sorted items.
+// "ThenByDescending" is just Opposite of "ThenBy".
+// var sortedPeople = people.OrderBy(p => p.LastName).ThenBy(p => p.FirstName);
+
+// "ElementAt" returns the item at a specified index in the list, and returns that item.
+//var numbers = new List<int> { 10, 20, 30 };
+//var thirdNumber = numbers.ElementAt(2);
+// Result: 30
+// "ElementAtOrDefault" is just like "ElementAt", but it returns the default value of the type if the index is out of range.
+//var numbers = new List<int> { 10, 20, 30 };
+//var outOfBounds = numbers.ElementAtOrDefault(5);
+// Result: 0
+
+// "OfType" filters the items in the list by a specified type, and returns a new list with only the items of that type.
+//var mixedList = new List<object> { 1, "two", 3.0, "four", 5 };
+
+// "OfType" is used to filter elements of a specific type from a collection that contains multiple types.
+//var strings = mixedList.OfType<string>();
+
+// Result: "two", "four"
+// "Cast" converts the items in the list to a specified type, and returns a new list with the converted items.
+//var objects = new List<object> { 1, 2, 3 };
+//var integers = objects.Cast<int>();
+// Result: 1, 2, 3
+
+// "DefaultIfEmpty" returns the items in the list, or a default value if the list is empty.
+//var emptyList = new List<int>();
+//var defaultList = emptyList.DefaultIfEmpty(42);
+// Result: 42
+
+// "Zip" combines two lists into a single list of tuples, and returns a new list with the combined items.
+//var list1 = new List<int> { 1, 2, 3 };
+//var list2 = new List<string> { "one", "two", "three" };
+//var zippedList = list1.Zip(list2, (num, str) => (Number: num, Text: str));
+// Result: (1, "one"), (2, "two"), (3, "three")
+
+// "Repeat" generates a sequence that contains one repeated value, and returns a new list with the repeated items.
+//var repeatedValues = Enumerable.Repeat("Hello", 3);
+// Result: "Hello", "Hello", "Hello"
+
+// "AsEnumerable" is used to convert a collection to an IEnumerable<T>, it is used to enable LINQ queries on the collection.
+//var array = new int[] { 1, 2, 3 };
+//var enumerable = array.AsEnumerable();
+// Result: 1, 2, 3
 
 
 
 
+
+/// Transforming and Converting
+
+
+
+// "ToList" is just like "list" function in other programming languages, it converts the result of a LINQ query to a List<T>.
+// "ToArray" is just like "array" function in other programming languages, it converts the result of a LINQ query to an array.
+// "ToDictionary" is just like "dictionary" function in other programming languages, it converts the result of a LINQ query to a Dictionary<TKey, TValue>.
+// "ToHashSet" is just like "set" function in other programming languages, it converts the result of a LINQ query to a HashSet<T>.
+// "ToLookup" is just like "group by" function in other programming languages, it converts the result of a LINQ query to a Lookup<TKey, TElement>.
+
+
+
+/// Aggregation and Quantifiers
+
+
+
+// "Count" is just like "length" property in other programming languages, it returns the number of items in the list.
+// var toyCount = toys.Count();
+
+// "LongCount" is just like "Count", but it returns a long integer instead of an integer.
+// var largeToyCount = toys.LongCount();
+
+// "Sum" is just like "reduce" function in other programming languages, it aggregates the items in the list, and returns a single value.
+// var totalCost = toyCosts.Sum();
+
+// "Max" is just like "max" function in other programming languages, it returns the maximum value in the list.
+// "Min" is just like "min" function in other programming languages, it returns the minimum value in the list.
+// var mostExpensiveToy = toys.Max(toy => toy.Price);
+
+// "Average" is just like "average" function in other programming languages, it returns the average value in the list.
+// var averageAge = people.Average(p => p.Age);
+
+// "Agregate" is just like "reduce" function in other programming languages, it aggregates the items in the list, and returns a single value.
+//var numbers = new List<int> { 1, 2, 3, 4 };
+//var sum = numbers.Aggregate(0, (total, current) => total + current);
+// Result: 10
+// "Aggregate" can also be used without a seed value, in which case the first element of the sequence is used as the initial accumulator value.
+//var numbers = new List<int> { 1, 2, 3, 4 };
+//var product = numbers.Aggregate((total, current) => total * current);
+// Result: 24
+
+// "Range" generates a sequence of integers within a specified range, it is used to create a list of numbers.
+//var numbers = Enumerable.Range(1, 10);
+// Result: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
 
