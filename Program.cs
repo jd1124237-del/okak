@@ -544,7 +544,7 @@ Console.WriteLine(jaggedArray[2][3]);  // Outputs: 9
 int[][] jaggedArray2 = [new int[] { 1, 2, 3 }, new int[] { 4, 5 }, new int[] { 6, 7, 8, 9 }];
 Console.WriteLine(jaggedArray2[2][3]);
 */
-
+/*
 // Creating and using a List
 List<string> fruits = new List<string>();
 fruits.Add("Apple");
@@ -559,9 +559,11 @@ fruits.Remove("Banana");
 
 // Checking if an element exists
 bool hasApple = fruits.Contains("Apple");  // true
+*/
 
 
 
+/*
 // LINQ query syntax
 int[] numberoes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 var evenNumbers = from num in numberoes
@@ -605,7 +607,7 @@ Console.WriteLine(string.Join(", ", numberGroups.Select(g => $"Key: {g.Key}, Cou
 // Aggregation
 int sumOfNumbers = numberoes.Sum(); // calculates the sum of all numbers
 Console.WriteLine(string.Join(", ", numberoes));
-
+*/
 
 
 /// LINQ Methods Overview
@@ -767,6 +769,68 @@ Console.WriteLine(string.Join(", ", numberoes));
 // "Range" generates a sequence of integers within a specified range, it is used to create a list of numbers.
 //var numbers = Enumerable.Range(1, 10);
 // Result: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+
+
+
+
+/*
+button.Click += new EventHandler(Button_Click);
+
+private void Button_Click(object sender, EventArgs e)
+{
+    Console.WriteLine("Button clicked!");
+}
+
+///   regular function   /\
+///                      ||
+///                      ||   same
+///                      ||
+///   arrow function     \/
+
+button.Click += (sender, e) => Console.WriteLine("Button clicked!");
+// 
+*/
+
+///////////////////////////////////////////////////////////////////////////
+
+Func<int, int, int> complexOperation = (a, b) =>
+{
+    var result = a * b;
+    if (result > 100)
+        return result / 2;
+    return result;
+};
+Console.WriteLine(complexOperation(15, 10)); // Output: 75
+
+// "Func" is just like "function" in other programming languages, it is used to define a function that can be passed as a parameter or returned from a method.
+// "<int, int, int>" indicates that the function takes two integers as input and returns an integer as output.
+
+////////////////////////////////////////////////////////////////////////////
+
+// With explicit types
+Func<int, int, bool> isGreaterExplicit = (int x, int y) => x > y;
+Console.WriteLine(isGreaterExplicit(10, 5)); // Output: True
+
+// With type inference
+var isGreaterInferred = (int x, int y) => x > y;
+
+// Even more concise with full type inference
+Func<int, int, bool> isGreaterFullInference = (x, y) => x > y;
+
+/////////////////////////////////////////////////////////////////////////////
+
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+
+// Map
+var squared = numbers.Select(x => x * x);
+
+// Filter
+var evenNumbers = numbers.Where(x => x % 2 == 0);
+
+// Reduce
+var sum = numbers.Aggregate((x, y) => x + y);
+
 
 
 
