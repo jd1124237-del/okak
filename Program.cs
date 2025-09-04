@@ -566,9 +566,7 @@ bool hasApple = fruits.Contains("Apple");  // true
 /*
 // LINQ query syntax
 int[] numberoes = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-var evenNumbers = from num in numberoes
-                  where num % 2 == 0
-                  select num;
+var evenNumbers = from num in numberoes where num % 2 == 0 select num;
 var evenNumbersList = evenNumbers.ToList(); // converts the result to a List<int>
 // or:
 //foreach (var number in evenNumbers)
@@ -771,7 +769,7 @@ Console.WriteLine(string.Join(", ", numberoes));
 // Result: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /*
@@ -792,8 +790,13 @@ button.Click += (sender, e) => Console.WriteLine("Button clicked!");
 // 
 */
 
-///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+using System.Linq.Expressions;
 
+/// LINQ Methods Overview
+/// Transforming and Converting
+/// Aggregation and Quantifiers
 Func<int, int, int> complexOperation = (a, b) =>
 {
     var result = a * b;
@@ -805,9 +808,9 @@ Console.WriteLine(complexOperation(15, 10)); // Output: 75
 
 // "Func" is just like "function" in other programming languages, it is used to define a function that can be passed as a parameter or returned from a method.
 // "<int, int, int>" indicates that the function takes two integers as input and returns an integer as output.
-
-////////////////////////////////////////////////////////////////////////////
-
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 // With explicit types
 Func<int, int, bool> isGreaterExplicit = (int x, int y) => x > y;
 Console.WriteLine(isGreaterExplicit(10, 5)); // Output: True
@@ -817,9 +820,9 @@ var isGreaterInferred = (int x, int y) => x > y;
 
 // Even more concise with full type inference
 Func<int, int, bool> isGreaterFullInference = (x, y) => x > y;
-
-/////////////////////////////////////////////////////////////////////////////
-
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
 List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
 
 // Map
@@ -830,6 +833,73 @@ var evenNumbers = numbers.Where(x => x % 2 == 0);
 
 // Reduce
 var sum = numbers.Aggregate((x, y) => x + y);
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+int[] numbers = { 1, 2, 3, 4, 5 };
+
+// Double each number
+var doubledNumbers = numbers.Select(n => n * 2);
+Console.WriteLine(string.Join(", ", doubledNumbers));
+// Result: { 2, 4, 6, 8, 10 }
+
+// Convert to string
+var numberStrings = numbers.Select(n => n.ToString());
+// Result: { "1", "2", "3", "4", "5" }
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+int[] numgbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+// Get even numbers
+var evenNumbers = numgbers.Where(n => n % 2 == 0);
+// Result: { 2, 4, 6, 8, 10 }
+
+// Get numbers greater than 5
+var greaterThanFive = numbers.Where(n => n > 5);
+// Result: { 6, 7, 8, 9, 10 }
+
+List<string> fruits = new List<string> { "apple", "banana", "cherry", "date", "elderberry" };
+
+// Get fruits with names longer than 5 characters
+var longFruitNames = fruits.Where(f => f.Length > 5);
+// Result: { "banana", "cherry", "elderberry" }
+
+// Get fruits that start with 'a' or 'b'
+var aOrBFruits = fruits.Where(f => f.StartsWith("a") || f.StartsWith("b"));
+// Result: { "apple", "banana" }
+*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+int[] numkbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+// Get squares of even numbers
+var evenSquares = numkbers.Where(n => n % 2 == 0).Select(n => n * n);
+// Result: { 4, 16, 36, 64, 100 }
+
+List<string> words = new List<string> { "hello", "world", "LINQ", "is", "awesome" };
+
+// Get uppercase letters of words longer than 3 characters
+var uppercaseLetters = words
+    .Where(w => w.Length > 3)
+    .Select(w => w.ToUpper());
+// Result: { "HELLO", "WORLD", "LINQ", "AWESOME" }
+*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// The difference between List and Array is that List is dynamic in size, while Array has a fixed size.
+
+
+
+
+
+
+
+
+
+
 
 
 
