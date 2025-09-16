@@ -894,7 +894,48 @@ var uppercaseLetters = words
 
 
 
+//// Creating and using a Dictionary
+//Dictionary<string, int> ages = new Dictionary<string, int>();
+//ages["Alice"] = 30;
+//ages["Bob"] = 25;
+//ages["Charlie"] = 35;
 
+//// Accessing dictionary elements
+//Console.WriteLine(ages["Bob"]);  // Outputs: 25
+
+//// Checking if a key exists
+//if (ages.ContainsKey("David"))
+//{
+//    Console.WriteLine(ages["David"]);
+//}
+//else
+//{
+//    Console.WriteLine("David not found in the dictionary");
+//}
+
+//// Iterating through a dictionary
+//foreach (var kvp in ages)
+//{
+//    Console.WriteLine($"{kvp.Key} is {kvp.Value} years old");
+//}
+
+//// Two-dimensional array
+//int[,] matrix = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+//Console.WriteLine(matrix[1, 1]);  // Outputs: 5
+
+//// Three-dimensional array
+//int[,,] cube = new int[2, 2, 2] {
+//    { { 1, 2 }, { 3, 4 } },
+//    { { 5, 6 }, { 7, 8 } }
+//};
+//Console.WriteLine(cube[1, 0, 1]);  // Outputs: 6
+
+//// Jagged array
+//int[][] jaggedArray = new int[3][];
+//jaggedArray[0] = new int[] { 1, 2, 3 };
+//jaggedArray[1] = new int[] { 4, 5 };
+//jaggedArray[2] = new int[] { 6, 7, 8, 9 };
+//Console.WriteLine(jaggedArray[2][1]);  // Outputs: 7
 
 
 
