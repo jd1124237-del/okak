@@ -845,6 +845,7 @@ Console.WriteLine(string.Join(", ", doubledNumbers));
 
 // Convert to string
 var numberStrings = numbers.Select(n => n.ToString());
+ConsoleWriteLine
 // Result: { "1", "2", "3", "4", "5" }
 */
 
@@ -940,15 +941,18 @@ var uppercaseLetters = words
 
 
 
+// hello, my name is Joseph
+// i like ice-cream and 
+// all i want is 
 
 
 
 
 
 
-
-
+// Waiting for the next 
 
 
 
 // waiting for part 18
+
